@@ -1,0 +1,7 @@
+# Perfil cpu: Sem GPU NVIDIA
+--index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://pypi.org/simple
+
+torch==2.5.1
+torchvision==0.20.1
+-r requirements-common.txt

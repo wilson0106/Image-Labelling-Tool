@@ -1,0 +1,2 @@
+# Build-only dependency. Runtime setup does not need PyInstaller.
+pyinstaller>=6.10,<7

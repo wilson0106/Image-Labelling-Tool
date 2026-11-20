@@ -1,0 +1,34 @@
+ILT Data Extraction & IAT 1.1.0 — Windows 11
+=============================================
+
+INSTALAÇÃO (uma única vez)
+1. Extraia o zip para uma pasta de caminho curto, por exemplo C:\ILT
+   (caminhos longos podem atrapalhar a instalação do PyTorch).
+2. Clique duas vezes em INSTALAR.bat.
+   - Se o Windows mostrar "O Windows protegeu o computador", clique em
+     "Mais informações" > "Executar assim mesmo".
+   - O instalador detecta a placa de vídeo e escolhe sozinho o PyTorch:
+       NVIDIA GTX 9xx/10xx/16xx, RTX 20xx, Quadro P/T ... -> CUDA 11.8
+       NVIDIA RTX 30xx/40xx, A-series ...                  -> CUDA 12.4
+       NVIDIA RTX 50xx (Blackwell)                         -> CUDA 12.8
+       Sem GPU NVIDIA (ou AMD/Intel)                       -> CPU
+   - Se não houver Python 3.11/3.12 no PC, ele baixa o Python 3.12 oficial
+     só para a pasta do ILT (.python312). Nada é alterado no sistema.
+   - Precisa de internet e leva de 5 a 20 minutos (PyTorch ~2–3 GB).
+   - Ao final cria o atalho "ILT Data Extraction" na Área de Trabalho.
+
+USO
+- Clique duas vezes em ILT.bat (ou no atalho). A interface abre no navegador.
+- Mantenha a janela preta aberta enquanto usa; para sair, botão "Encerrar".
+- ILT_classico.bat abre a interface antiga (Tk).
+
+PRÉ-REQUISITO PARA USAR A GPU
+- Driver NVIDIA atualizado (GeForce/Studio ou Quadro). O CUDA não precisa ser
+  instalado à parte: ele vem junto com o PyTorch.
+- Trocou de placa ou atualizou o driver? Rode INSTALAR.bat de novo.
+
+PROBLEMAS
+- Rode DIAGNOSTICO.bat e envie diagnostics\windows_diagnostic.txt.
+- O modo "Lunar (astronômico)" da Análise Temporal precisa do pacote
+  pyswisseph, que não tem versão pronta para Windows; sem ele, todo o resto
+  funciona normalmente.

@@ -1,0 +1,7 @@
+# Perfil cu118: NVIDIA Maxwell/Pascal/Volta/Turing (GTX 9xx-16xx, RTX 20xx, Quadro P4000...)
+--index-url https://download.pytorch.org/whl/cu118
+--extra-index-url https://pypi.org/simple
+
+torch==2.5.1
+torchvision==0.20.1
+-r requirements-common.txt

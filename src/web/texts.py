@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+"""Texts that exist only in the web interface (the rest comes from ui_resources)."""
+from __future__ import annotations
+
+from ui_resources import APP_TEXT
+
+WEB_TEXT = {
+    'pt': {
+        'plate_training': 'Treino do modelo',
+        'mascot_tip': 'Clique: outro mascote • duplo clique: jogo',
+        'plate_classification': 'Classificação',
+        'plate_iat': 'IAT',
+        'plate_appearance': 'Aparência',
+        'appearance': 'Aparência',
+        'browse': 'Selecionar pasta',
+        'quit': 'Encerrar',
+        'quit_confirm': 'Encerrar a interface? Uma execução em andamento será interrompida.',
+        'yes': 'Sim',
+        'no': 'Não',
+        'close': 'Fechar',
+        'presets': 'Temas prontos',
+        'colors': 'Cores',
+        'font_shape': 'Fonte e forma',
+        'accent': 'Destaque principal',
+        'accent2': 'Destaque secundário',
+        'background': 'Fundo',
+        'text_color': 'Texto',
+        'font_display': 'Títulos',
+        'font_body': 'Texto',
+        'glass': 'Transparência dos painéis',
+        'radius': 'Raio dos cantos',
+        'font_scale': 'Tamanho do texto',
+        'gpu_monitor': 'Monitor de GPU/CPU na barra lateral',
+        'save_theme': 'Salvar tema',
+        'reset_theme': 'Restaurar padrão',
+        'theme_saved': 'Tema salvo em {path}.',
+        'contrast': 'Contraste texto/fundo {ratio}:1 · {level}',
+        'contrast_low': 'abaixo do mínimo de 4,5:1',
+        'class_colors_note': 'As cores das classes são fixas e não mudam com o tema; foram verificadas para daltonismo.',
+        'old_log_title': 'Log anterior',
+        'open_folder': 'Abrir pasta',
+        'counts': 'Contagens',
+        'normalized': '% por classe real',
+        'running_elsewhere': 'Há uma execução em andamento.',
+        'gpu_note': 'GPU usada pelo treino e pela extração de features; gráficos desenhados via WebGL no navegador.',
+    },
+    'en': {
+        'plate_training': 'Model training',
+        'mascot_tip': 'Click: another mascot • double-click: game',
+        'plate_classification': 'Classification',
+        'plate_iat': 'IAT',
+        'plate_appearance': 'Appearance',
+        'appearance': 'Appearance',
+        'browse': 'Select folder',
+        'quit': 'Quit',
+        'quit_confirm': 'Quit the interface? A running job will be stopped.',
+        'yes': 'Yes',
+        'no': 'No',
+        'close': 'Close',
+        'presets': 'Ready-made themes',
+        'colors': 'Colours',
+        'font_shape': 'Font and shape',
+        'accent': 'Main accent',
+        'accent2': 'Secondary accent',
+        'background': 'Background',
+        'text_color': 'Text',
+        'font_display': 'Headings',
+        'font_body': 'Body text',
+        'glass': 'Panel transparency',
+        'radius': 'Corner radius',
+        'font_scale': 'Text size',
+        'gpu_monitor': 'GPU/CPU monitor in the sidebar',
+        'save_theme': 'Save theme',
+        'reset_theme': 'Restore default',
+        'theme_saved': 'Theme saved to {path}.',
+        'contrast': 'Text/background contrast {ratio}:1 · {level}',
+        'contrast_low': 'below the 4.5:1 minimum',
+        'class_colors_note': 'Class colours are fixed and do not follow the theme; they were checked for colour blindness.',
+        'old_log_title': 'Previous log',
+        'open_folder': 'Open folder',
+        'counts': 'Counts',
+        'normalized': '% by true class',
+        'running_elsewhere': 'A job is running.',
+        'gpu_note': 'GPU used by training and feature extraction; charts drawn with WebGL in the browser.',
+    },
+}
+
+
+def t(lang, key):
+    lang = 'en' if lang == 'en' else 'pt'
+    if key in WEB_TEXT[lang]:
+        return WEB_TEXT[lang][key]
+    return APP_TEXT[lang].get(key, key)

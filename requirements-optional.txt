@@ -1,0 +1,4 @@
+# Opcional: efemérides astronômicas (ciclo lunar da Análise Temporal).
+# Não há pacote pronto para todas as plataformas; se a compilação falhar,
+# o ILT funciona normalmente sem o modo "Lunar (astronômico)".
+pyswisseph==2.10.3.2

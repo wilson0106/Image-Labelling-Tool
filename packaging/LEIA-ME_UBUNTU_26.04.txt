@@ -1,0 +1,37 @@
+ILT Data Extraction & IAT 1.1.0 — Ubuntu 26.04
+=============================================
+
+INSTALAÇÃO (uma única vez)
+1. Extraia o zip, por exemplo em ~/ILT:
+     unzip ILT_1.1.0_Ubuntu26.04.zip -d ~/
+     cd ~/ILT_1.1.0
+2. Rode:
+     bash START_HERE_LINUX.sh
+   - O instalador detecta a placa de vídeo e escolhe sozinho o PyTorch:
+       NVIDIA GTX 9xx/10xx/16xx, RTX 20xx, Quadro P/T ... -> CUDA 11.8
+       NVIDIA RTX 30xx/40xx, A-series ...                  -> CUDA 12.4
+       NVIDIA RTX 50xx (Blackwell)                         -> CUDA 12.8
+       Sem GPU NVIDIA (ou AMD/Intel)                       -> CPU
+   - O Ubuntu 26.04 usa Python 3.14 por padrão; o instalador cria
+     automaticamente um Python 3.12 local (Miniforge) dentro da pasta do ILT,
+     sem alterar o Python do sistema.
+   - Precisa de internet e leva de 5 a 20 minutos (PyTorch ~2–3 GB).
+   - Tudo fica na pasta .venv do ILT.
+
+USO
+     ./run_gui.sh              (interface nova, abre no navegador)
+     ./run_gui.sh --classic    (interface antiga, Tk)
+   Para sair, use o botão "Encerrar" na barra lateral (ou Ctrl+C no terminal).
+
+PRÉ-REQUISITO PARA USAR A GPU
+- Driver NVIDIA instalado (Ubuntu: "Programas e atualizações" > "Drivers
+  adicionais", ou: sudo ubuntu-drivers install). O CUDA não precisa ser
+  instalado à parte: ele vem junto com o PyTorch.
+- Trocou de placa ou atualizou o driver? Rode ./setup_linux.sh de novo.
+- Forçar um perfil: ILT_PROFILE=cpu ./setup_linux.sh (ou cu118, cu124, cu128).
+
+PROBLEMAS
+- Rode ./diagnose_linux.sh e envie diagnostics/linux_diagnostic.txt.
+- O modo "Lunar (astronômico)" precisa do pacote opcional pyswisseph; se ele
+  não instalar, rode: sudo apt install build-essential python3-dev
+  e depois ./setup_linux.sh.

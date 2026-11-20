@@ -1,0 +1,5 @@
+ILT Data Extraction & IAT
+Versão: 1.1.0 (estável) — interface web (Dash/Plotly)
+Plataformas: Windows 11 · Ubuntu 24.04 · Ubuntu 26.04
+GPU: detectada automaticamente (NVIDIA CUDA 11.8 / 12.4 / 12.8) ou CPU
+Calibração padrão: 12.87 µm/pixel (editável por projeto)
