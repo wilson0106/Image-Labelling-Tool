@@ -5,7 +5,7 @@ Flask==3.0.3
 Werkzeug==3.0.6
 importlib_metadata==8.5.0
 zipp==3.21.0
-requests==2.32.3
+requests==2.33.0
 urllib3==2.2.3
 certifi==2024.8.30
 charset-normalizer==3.4.0
